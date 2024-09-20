@@ -26,9 +26,7 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
         address _buyer
     );
 
-    constructor(
-        address _initialOwner
-    ) ERC721("Jiggy", "JGY") Ownable(_initialOwner) {}
+    constructor() ERC721("Jiggy", "JGY") Ownable(msg.sender) {}
 
     function mint(string memory _tokenURI) public returns (uint256) {
         uint256 tokenId = nextTokenId++;
